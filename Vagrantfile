@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
         box.vm.network :forwarded_port, guest: 20, host: boxconfig[:hostftpdata]
         box.vm.network :forwarded_port, guest: 21, host: boxconfig[:hostftpport]
         box.vm.network "private_network", ip: boxconfig[:ip_addr], netmask: "255.255.255.0", virtualbox__intnet: "tensor"
-        box.vm.network "public_network", ip: '192.168.88.24'
+#       box.vm.network "public_network", ip: '192.168.88.24'
         box.vm.provider :virtualbox do |vb|
           vb.customize ["modifyvm", :id, "--memory", "512"]
         end
